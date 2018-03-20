@@ -318,38 +318,47 @@ border: 2px solid #742a8f;
     background-size: 120%;
     }
   .etoiles{
+    width: 1000px;
+    margin: 0 auto;
+    overflow:hidden;
     background: url(../img/etoiles.png) no-repeat top center;
     grid-row: 1;
-    animation: blink1 5s ease infinite;
-    opacity: 0.7;
+    animation: blink1 3s ease infinite, rotate 550s linear infinite;
+    opacity: 0.1;
+    border-radius: 50px;
+
+  }
+  .etoiles2{
+    width: 1000px;
+    margin: 0 auto;
+    overflow:hidden;
+    background: url(../img/etoiles2.png) no-repeat top center;
+    grid-row: 1;
+    animation: blink2 2s ease infinite, rotate 750s linear infinite;
+    opacity: 0;
+    border-radius: 50px;
   }
   @keyframes blink1{
     20% {
-      opacity: 0.2;
+      opacity: 1;
     }
     70% {
-      opacity: 0.5;
+      opacity: 0.4;
     }
   }
-    .etoiles2{
-      background: url(../img/etoiles.png) no-repeat top center;
-      grid-row: 1;
-      transform-origin: 50% 50%;
-      transform: rotateX(180deg);
-      animation: blink2 6s ease infinite;
-      opacity: 0.2;
+  @keyframes blink2{
+    50% {
+      opacity: 1;
     }
-    @keyframes blink2{
-      25% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.5;
-      }
-      75% {
-        opacity: 0.8;
-      }
-    }
+  }
+  @keyframes rotate{
+    0%{
+      transform: rotate(0deg);
+  }
+    100%{
+      transform: rotate(360deg);
+  }
+  }
 
     .arbres{
       width: 400px;
@@ -390,6 +399,37 @@ border: 2px solid #742a8f;
       "svg svg";
   grid-row: 1;
 }
+.intel{
+  font-size: 2em;
+  color: #cc0099;
+  width: 300px;
+  font-weight: bold;
+  height: 70px;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  border-right: .05em solid #cc0099;
+  letter-spacing: .03em;
+  transform: translatex(0px) translatey(0px);
+  animation: type 6s steps(21, end),
+             blink-caret .6s step-end infinite;
+}
+
+@keyframes type{
+  from{
+    width: 0;
+  }
+}
+@keyframes blink-caret{
+  50%{
+    border-color: transparent;
+  }
+}
+
+.creafun{
+
+}
 
 @media screen and (min-width:600px) {
   .accueil{
@@ -403,14 +443,36 @@ border: 2px solid #742a8f;
     width: 550px;
     z-index: 5;
   }
+  .intel{
+  font-size: 4.2em;
+  color: #cc0099;
+  width: 550px;
+  font-weight: bold;
+  height: 70px;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  border-right: .05em solid #cc0099;
+  letter-spacing: .03em;
+  transform: translatex(0px) translatey(-200px);
+  }
+  .creafun{
+    width: 550px;
+    height: 400px;
+    margin: auto;
+
+  }
+
 }
 
 @media screen and (min-width:1000px) {
   .header-citation{
-    width: 550px;
-
+    width: 1300px;
   }
-
+  .intel{
+    transform: translatex(0px) translatey(-300px);
+  }
 
 }
 
